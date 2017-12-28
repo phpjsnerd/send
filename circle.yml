@@ -17,15 +17,15 @@ deployment:
     branch: master
     commands:
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-    - docker build -t mozilla/send:latest .
-    - docker push mozilla/send:latest
+    - docker build -t phpjsnerd/send:latest .
+    - docker push phpjsnerd/send:latest
   tags:
     tag: /.*/
-    owner: mozilla
+    owner: phpjsnerd
     commands:
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-    - docker build -t mozilla/send:$CIRCLE_TAG .
-    - docker push mozilla/send:$CIRCLE_TAG
+    - docker build -t phpjsnerd/send:$CIRCLE_TAG .
+    - docker push phpjsnerd/send:$CIRCLE_TAG
 
 test:
   override:
